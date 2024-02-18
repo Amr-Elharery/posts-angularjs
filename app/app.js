@@ -1,0 +1,1 @@
+const postsApp = angular.module("postsApp", ["ngRoute", "ngAnimate"]);
