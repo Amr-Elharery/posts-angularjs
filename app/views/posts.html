@@ -1,0 +1,18 @@
+<div class="posts">
+  <div class="container">
+    <h2 ng-show="isLoading">Loading...</h2>
+    <div class="holder">
+      <div ng-repeat="post in posts" class="post">
+        <div class="post-head">
+          <span>User: {{post.userId}}</span>
+          <p>{{post.title}}</p>
+        </div>
+        <div class="post-body">{{post.body}}.</div>
+        <div class="post-foot">
+          <a href="#!/posts/{{post.id}}">Show more</a>
+          <button ng-click="deletePost(post)">Delete post</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

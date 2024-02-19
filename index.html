@@ -2,8 +2,8 @@
 <html lang="en" ng-app="postsApp">
   <head>
     <title>Posts App</title>
-    <!-- For styling -->
-    <link rel="stylesheet" href="content/css/style.css" />
+    <!-- For stylesheet styling -->
+    <link rel="stylesheet" href="app/content/css/style.css" />
     <!-- For Use AngularJs -->
     <script type="text/javascript" src="app/lib/angular.min.js"></script>
     <!-- For Use AngularJs Router-->
@@ -15,6 +15,22 @@
     ></script>
     <!-- Main Script For App -->
     <script src="app/app.js"></script>
+    <!-- Post service -->
+    <script src="app/services/post-service.js"></script>
+    <!-- Posts Controller -->
+    <script src="app/controllers/PostsController.js"></script>
+    <!-- Post Controller -->
+    <script src="app/controllers/PostController.js"></script>
+    <!-- CreatePost Controller -->
+    <script src="app/controllers/CreatePostController.js"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- Header -->
+    <header ng-include="'app/views/header.html'"></header>
+    <!-- main view includ routes -->
+    <main ng-view></main>
+
+    <!-- Footer -->
+    <footer ng-include="'app/views/footer.html'"></footer>
+  </body>
 </html>

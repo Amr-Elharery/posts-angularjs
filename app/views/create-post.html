@@ -1,0 +1,33 @@
+<div class="container">
+  <form name="addPost" ng-submit="submitPost()" novalidate>
+    <input
+      type="text"
+      name="title"
+      ng-model="title"
+      ng-required="true"
+      placeholder="Title of the post"
+      
+    />
+    <div ng-show="addPost.title.$touched && addPost.title.$pristine">
+      <small class="error-msg">Please Enter a Valid Name</small>
+    </div>
+    <textarea
+      type="text"
+      name="body"
+      ng-model="body"
+      ng-required="true"
+      placeholder="Body of the post"
+    >
+    </textarea>
+    <div ng-show="addPost.body.$touched && addPost.body.$pristine">
+      <small class="error-msg">Please Enter a Valid Body For The Post</small>
+    </div>
+
+    <input
+      class="submit"
+      type="submit"
+      value="Post"
+      ng-disabled="addPost.$invalid"
+    />
+  </form>
+</div>

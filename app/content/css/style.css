@@ -1,0 +1,362 @@
+/*Start Global Rules*/
+:root {
+  --main-transition: 0.3s;
+  --main-color: #2196f3;
+  --main-color-alt: #1787e0;
+  --section-bg: #ececec;
+  --main-border-radius: 6px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: arial;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.error-msg {
+  color: red;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+/* Responsive */
+.container {
+  padding-inline: 15px;
+  margin-inline: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*End Global Rules*/
+
+/* Animations */
+main.ng-enter {
+  transition: var(--main-transition) linear all;
+  opacity: 0;
+  -webkit-transition: var(--main-transition) linear all;
+  -moz-transition: var(--main-transition) linear all;
+  -ms-transition: var(--main-transition) linear all;
+  -o-transition: var(--main-transition) linear all;
+}
+
+main.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.holder .post.ng-enter {
+  transition: 0.5s linear all;
+  opacity: 0;
+  transform: translateY(30px);
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -ms-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  -webkit-transform: translateY(30px);
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -o-transform: translateY(30px);
+}
+.holder .post.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+}
+.holder .post.ng-leave {
+  transition: 0.2s linear all;
+  opacity: 1;
+  transform: translateX(0);
+  -webkit-transition: 0.2s linear all;
+  -moz-transition: 0.2s linear all;
+  -ms-transition: 0.2s linear all;
+  -o-transition: 0.2s linear all;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+}
+.holder .post.ng-leave.ng-leave-active {
+  opacity: 0;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+}
+
+/* main */
+main {
+  background-color: var(--section-bg);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+main,
+.home {
+  min-height: calc(100vh - 160px);
+}
+/* Home */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home .container {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: var(--main-border-radius);
+  -webkit-border-radius: var(--main-border-radius);
+  -moz-border-radius: var(--main-border-radius);
+  -ms-border-radius: var(--main-border-radius);
+  -o-border-radius: var(--main-border-radius);
+}
+.home .container h1,
+.home .container h2 {
+  color: var(--main-color);
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+
+/* Header & Footer */
+header,
+footer {
+  background-color: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+@media (max-width: 767px) {
+  header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+header h1 a {
+  color: var(--main-color);
+  font-size: 34px;
+}
+
+header ul {
+  display: flex;
+  gap: 15px;
+}
+
+header ul a {
+  font-size: 20px;
+  border-radius: var(--main-border-radius);
+  transition: var(--main-transition);
+  padding: 5px 8px;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  -webkit-border-radius: var(--main-border-radius);
+  -moz-border-radius: var(--main-border-radius);
+  -ms-border-radius: var(--main-border-radius);
+  -o-border-radius: var(--main-border-radius);
+}
+
+header ul a:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+footer h3 {
+  color: var(--main-color);
+}
+
+/* Finish Header & Footer*/
+
+/* Posts */
+
+.holder {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(300px 1fr));
+}
+
+.holder .post {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: var(--main-border-radius);
+  box-shadow: 4px 4px 10px 0 #ccc;
+  background-color: #fff;
+  -webkit-border-radius: var(--main-border-radius);
+  -moz-border-radius: var(--main-border-radius);
+  -ms-border-radius: var(--main-border-radius);
+  -o-border-radius: var(--main-border-radius);
+}
+
+.holder .post-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.holder .post-head span {
+  font-size: 14px;
+}
+
+.holder .post-body {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.holder .post-foot {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.holder .post-foot a,
+.holder .post-foot button {
+  padding: 8px 10px;
+  font-size: 15px;
+  transition: var(--main-transition);
+  border-radius: var(--main-border-radius);
+  -webkit-border-radius: var(--main-border-radius);
+  -moz-border-radius: var(--main-border-radius);
+  -ms-border-radius: var(--main-border-radius);
+  -o-border-radius: var(--main-border-radius);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+
+.holder .post-foot a {
+  background-color: var(--main-color);
+  color: #fff;
+}
+.holder .post-foot a:hover {
+  background-color: var(--main-color-alt);
+}
+.holder .post-foot button {
+  cursor: pointer;
+  background-color: #f00;
+  color: #fff;
+}
+.holder .post-foot button:hover {
+  background-color: rgb(216, 3, 3);
+}
+/* Finish Posts */
+
+/* Create Post Form */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: var(--main-border-radius);
+  -webkit-border-radius: var(--main-border-radius);
+  -moz-border-radius: var(--main-border-radius);
+  -ms-border-radius: var(--main-border-radius);
+  -o-border-radius: var(--main-border-radius);
+}
+
+form input[type="text"],
+form textarea {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: var(--main-border-radius);
+  -webkit-border-radius: var(--main-border-radius);
+  -moz-border-radius: var(--main-border-radius);
+  -ms-border-radius: var(--main-border-radius);
+  -o-border-radius: var(--main-border-radius);
+}
+
+form textarea {
+  height: 150px;
+  resize: none;
+}
+
+form input.submit {
+  padding: 8px 20px;
+  background-color: var(--main-color);
+  border-radius: var(--main-border-radius);
+  color: #fff;
+  cursor: pointer;
+  transition: var(--main-transition);
+  -webkit-border-radius: var(--main-border-radius);
+  -moz-border-radius: var(--main-border-radius);
+  -ms-border-radius: var(--main-border-radius);
+  -o-border-radius: var(--main-border-radius);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+form input.submit:hover {
+  background-color: var(--main-color-alt);
+}
+
+input[disabled="disabled"] {
+  opacity: 0.4;
+  cursor: not-allowed !important;
+}
+
+/* Finish Form */

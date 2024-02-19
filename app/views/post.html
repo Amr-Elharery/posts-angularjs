@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="holder">
+    <h2 ng-show="isLoading">Loading...</h2>
+    <div class="post">
+      <div class="post-head">
+        <span>User: {{post.userId}}</span>
+        <p>{{post.title}}</p>
+      </div>
+      <div class="post-body">{{post.body}}.</div>
+      <div class="post-foot">
+        <button ng-click="deletePost()">Delete post</button>
+      </div>
+    </div>
+  </div>
+</div>
